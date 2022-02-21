@@ -68,7 +68,7 @@ static int init_paint(char **paint, t_zone zone)
 	i = 0;
 	while(i < zone.height)
 	{
-		if (!(paint[i] = calloc(1, zone.width +1)))
+		if (!(paint[i] = calloc(1, zone.width + 1)))
 			return 1;
 		memset(paint[i], zone.bc, zone.width);
 		++i;
@@ -105,7 +105,7 @@ static int drawrectangle(t_zone zone, t_draw draw, char **paint)
 		while (j < zone.width)
 		{
 			k = isinrectangle(j, i, draw);
-			if(k == 0 || (k == 1 &&draw.type == 'R'))
+			if(k == 0 || (k == 1 && draw.type == 'R'))
 			paint[i][j] = draw.c;
 			++j;
 		}
